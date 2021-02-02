@@ -1,3 +1,11 @@
+/* path for weather icons
+https://openweathermap.org/img/wn/02d@4x.png
+01d@4x - 14d#4x
+01d == day/color mode
+o1n == night/monotone
+@4x == size (max) 
+*/
+
 :root {
     --background-color: rgb(250, 250, 250); /**/
     --dark-text: rgb(30, 30, 30);
