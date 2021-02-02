@@ -7,6 +7,7 @@ console.log('weather-app2');
 //API KEY: 
 //DOVI KEY: 3069ae2718e40f8dc1998b7250e16f10
 //api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}&units=imperial
+
 const API_KEY = '3069ae2718e40f8dc1998b7250e16f10';
 
 
