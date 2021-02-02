@@ -1,0 +1,29 @@
+:root {
+    --background-color: rgb(250, 250, 250); /**/
+    --dark-text: rgb(30, 30, 30);
+    --med-gray: #808080;
+    --dark-gray: #343a40;
+
+    --light-border: rgb(219, 219, 219);
+
+    --highlight-yellow: rgb(218, 165, 32);/*goldenrod*/
+    --highlight-red: rgb(220, 20, 60);/*crimson*/
+}
+html {
+    min-height: 100%;
+}
+body {
+    height: 100%;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--dark-text);
+    font-size: 1em;
+
+}
+#content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
