@@ -30,6 +30,7 @@ body {
     font-size: 1em;
 
 }
+
 #content {
     width: 100%;
     height: 100%;
@@ -43,6 +44,7 @@ body {
     flex-flow: row wrap;
 }
 
+/* BLACK BARS */
 .bar{
    background: var(--dark-text); 
 
@@ -60,7 +62,7 @@ body {
 }
 
 
-
+/* MAIN DISPLAY */
 
 .display {
     display: flex;
@@ -74,6 +76,7 @@ body {
 }
 
 
+/* SIDE DISPLAY */
 
 .details {
     display: flex;
