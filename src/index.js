@@ -21,13 +21,44 @@ async function getWeather(location, unit) {
 
     console.log(weatherData);
     //return a value
+    //return weatherData;
 };
 getWeather('detroit', 'imperial');
 
 
 //process data i want to display
+function getDisplayData(location, unit) {
+    //city
+    const city = getWeather(location, unit).name;
+    //weather (sunny/cloudy/rainy/etc)
+    const sky = getWeather(location, unit).weather.description;
+    //actual temp
+    const mainTemp = getWeather(location, unit).main.temp;
+    const feelsLike = getWeather(location, unit).main.feels_like;
+    // hi/lo
+    const hi = getWeather(location, unit).main.temp_max;
+    const lo = getWeather(location, unit).main.temp_min;
+    //humidity
+    const humidity = getWeather(location, unit).main.humidity;
+    //wind
+    const windSpeed = getWeather(location, unit).wind.speed;
+
+    const displayData = await Promise.all([
+        city,
+        sky,
+        mainTemp,
+        feelsLike,
+        hi,
+        lo,
+        humidity,
+        windSpeed,
+    ])
+
+    return displayData;
+}
 
 //city
+
 //weather (sunny/cloudy/rainy/etc)
 //actual temp
 // hi/lo
@@ -35,8 +66,30 @@ getWeather('detroit', 'imperial');
 //wind
 
 
+const getFruit = async(name) => {
+    const fruits = {
+        pineapple: 'piney',
+        peach: 'peachy',
+        strawberry: 'rawberry'
+    }
+    return Promise.resolve(fruits[name]);
+}
+//getFruit('peach').then(console.log)
 
+const makeSmoothie = async() => {
+    try {
+        const a = getFruit('pineapple');
+        const b = getFruit('strawbery');
+        const smoothie = await Promise.all([a, b]);
 
+        //throw 'its broken'; //for testing
+
+        return smoothie;
+
+    } catch(err) {
+        console.log(err);
+    }
+};
 
 
 
