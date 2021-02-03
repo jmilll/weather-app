@@ -20,6 +20,7 @@ async function getWeather(location, unit) {
     //process data
 
     console.log(weatherData);
+    filterData(weatherData);
     //return a value
     //return weatherData;
 };
@@ -27,11 +28,50 @@ getWeather('detroit', 'imperial');
 
 
 //process data i want to display
-function getDisplayData(location, unit) {
+function filterData(weatherData) {
+    //city
+    const city = weatherData.name;
+    //weather (sunny/cloudy/rainy/etc)
+    const sky = weatherData.weather[0].description;
+    const iconId = weatherData.weather[0].icon;
+    //temp
+    const mainTemp = Math.round(weatherData.main.temp);
+    const feelsLike = Math.round(weatherData.main.feels_like);
+    const hi = Math.round(weatherData.main.temp_max);
+    const lo = Math.round(weatherData.main.temp_min);
+    //humidity
+    const humidity = weatherData.main.humidity;
+    //wind
+    const windSpeed = Math.round(weatherData.wind.speed);
+
+    const displayData = {
+        city,
+        sky,
+        iconId,
+        mainTemp,
+        feelsLike,
+        hi,
+        lo,
+        humidity,
+        windSpeed,
+    }
+    console.log(displayData);
+    return displayData;
+}
+
+
+
+
+
+
+/*
+//dont want to call the api a bunch of times
+async function filterData2(location, unit) {
     //city
     const city = getWeather(location, unit).name;
     //weather (sunny/cloudy/rainy/etc)
-    const sky = getWeather(location, unit).weather.description;
+    const sky = getWeather(location, unit).weather[0].description;
+    const iconId = getWeather(location, unit).weather[0].icon;
     //actual temp
     const mainTemp = getWeather(location, unit).main.temp;
     const feelsLike = getWeather(location, unit).main.feels_like;
@@ -46,6 +86,7 @@ function getDisplayData(location, unit) {
     const displayData = await Promise.all([
         city,
         sky,
+        iconId,
         mainTemp,
         feelsLike,
         hi,
@@ -91,6 +132,6 @@ const makeSmoothie = async() => {
     }
 };
 
-
+*/
 
 //export {allProjects, setData,};
