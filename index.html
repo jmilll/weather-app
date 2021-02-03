@@ -6,16 +6,70 @@
     <title>Weather App</title>
     <!-- font <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600;700;800;900&display=swap" rel="stylesheet">-->
     <!--for packaging, remove styles and switch script to main
-    <link href="../src/normalize.css" rel="stylesheet">
+    
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="../src/normalize.css" rel="stylesheet">
     <link href="../src/style.css" rel="stylesheet">
 </head>
+<!-- for degree symbol <span>&#176;</span> -->
 <body>
     <div id="content">
+        <header>
+            <form class="search">
+                <input class="form-input" type="search" placeholder="Enter City" required>
+                <button class="search-btn" type="button">Search</button>
+            </form>
+        </header>
 
-
+        <div class="bar hor"></div>
+        
+        <main class="container">
+            <section class="display">
+                <h1 class="city">Detroit</h1>
+                <p class="sky">clear sky</p>
+                <div class="sky-icon">
+                    <img class="icon" src="https://openweathermap.org/img/wn/01d@4x.png" alt="clear sky">
+                </div>
+            </section >
+            <section class="details">
+                <div class="hero-temp">
+                    <div>
+                        <h2>Current Temp</h2>
+                        <h2 class="current-temp">37°</h2>
+                    </div>
+                    <div class="bar vert"></div>
+                    <div>
+                        <h2>Feels Like</h2>
+                        <h2 class="feels-like">28°</h2>
+                    </div>
+                </div>
+                <div class="hi-lo-container">
+                        <p class="high">H:37°</p>
+                        <p class="low">L:36°</p>
+                </div>
+                <!--<div class="hi-lo-container">
+                    <div>
+                        <h4>H:</h4>
+                        <p class="high">H:37°</p>
+                    </div>
+                    <div>
+                        <h4>L:</h4>
+                        <p class="low">L:36°</p>
+                    </div>
+                </div>-->
+                <div>
+                    <h4>Humidity</h4>
+                    <p class="humidity">38°</p>
+                </div>
+                <div>
+                    <h4>Wind</h4>
+                    <p class="wind">6</p>
+                </div>
+            </section >
+        </main>
     </div>
-
+    <div></div>
+    <p></p>
 <!--<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
 <script src="../src/index.js"></script>
 <!-- <script src="main.js"></script> </script> -->
