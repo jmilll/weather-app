@@ -10,6 +10,8 @@ console.log('weather-app2');
 
 const API_KEY = '3069ae2718e40f8dc1998b7250e16f10';
 
+//<!--degree symbol in UNICODE use-->
+//° or °
 
 async function getWeather(location, unit) {
     //call the api
@@ -24,7 +26,7 @@ async function getWeather(location, unit) {
     //return a value
     //return weatherData;
 };
-getWeather('detroit', 'imperial');
+//getWeather('detroit', 'imperial');
 
 
 //process data i want to display
@@ -59,7 +61,9 @@ function filterData(weatherData) {
     return displayData;
 }
 
+function displayData() {
 
+}
 
 
 
