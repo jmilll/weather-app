@@ -29,11 +29,15 @@ body {
     color: var(--dark-text);
     font-size: 1em;
 
+    font-family: 'Roboto Slab', serif;
+
 }
 
 p {
     margin: 0;
+    color: #42474d;
 }
+
 h1 {
    font-size: 7rem;
    margin: 0;
@@ -42,10 +46,13 @@ h2 {
     margin: 0;
 }
 h3 {
-    margin: 0;
+    margin: 0 0 .3rem 0;
+    font-size: 1rem;
+    color: #42474d;
 }
 h4 {
-    margin: 1rem 0 .3rem 0;
+    /*margin: 1rem 0 .3rem 0;*/
+    margin: 0 0 .3rem 0;
 }
 
 #content {
@@ -62,7 +69,7 @@ h4 {
     justify-content: space-between;
 }
 
-/* BLACK BARS */
+/* DIVIDER BARS */
 .bar{
    background: var(--dark-text); 
 
@@ -76,6 +83,13 @@ h4 {
 .thicc {
     height: 2rem;
     margin: 3rem 0 2rem 0;
+}
+
+.divide {
+    height: 2px;
+    width: 200px;
+    margin: .5rem 0;
+    background: #f2f2f2;
 }
 
 /* MAIN DISPLAY */
@@ -115,25 +129,53 @@ h4 {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-end;
+
+    border: 5px solid;
+    padding: 1rem;
+    padding-top: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
+.cap {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
 .icon {
-    border-bottom: 5px solid;
+    
 }
-
+.sky {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: -1rem;
+}
 .hi-lo-container {
     display: flex;
-
     flex-flow: row nowrap;
-    font-size: 1.5rem;
-    font-weight: bold;
     margin: 0 0 3.5rem 1rem;
-    letter-spacing: 1px;
-
+    
     justify-content: space-between;
     width: 160px;
 }
+.high {
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.low {
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.sky-icon {
+    border-bottom: 5px solid #eb6e4b;
+    margin: 0 0 1rem 0;
 
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
 .weather-data{
     width: 100%;
     display: flex;

@@ -8,6 +8,10 @@
     <!--for packaging, remove styles and switch script to main
     
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="../src/normalize.css" rel="stylesheet">
     <link href="../src/style.css" rel="stylesheet">
 </head>
@@ -51,20 +55,25 @@
                 
                 <div class="sky-icon">
                     <img class="icon" src="https://openweathermap.org/img/wn/10d@4x.png" alt="clear sky">
+                    <p class="sky">clear sky</p>
                 </div>
-                <p class="sky">clear sky</p>
+                
 
                 <section class="weather-data">
 
-                    <h2 class="feels-like">Feels Like 28°</h2>
+                    <h3 class="cap">FEELS LIKE</h3>
+                    <p class="feels-like">28°</p>
 
+                    <div class="bar divide"></div>
 
-                    <h4>Humidity</h4>
+                    <h3 class="cap">HUMIDITY</h3>
                     <p class="humidity">38°</p>
 
-                    <h4>Wind</h4>
+                    <div class="bar divide"></div>
+
+                    <h3 class="cap">WIND</h3>
                     <p class="wind">6</p>
-                    </div>
+                    
                 </section>
             </section >
         </main>
@@ -73,6 +82,29 @@
     
     <p></p>
 <!--
+                    <section class="weather-data">
+                    <div class="bar divide"></div>
+
+                    <h3 class="cap">FEELS LIKE</h3>
+                    <p class="feels-like">28°</p>
+
+                    <div class="bar divide"></div>
+                    <h3>Feels Like</h3>
+                    <p class="feels-like">28°</p>
+
+                    <div class="bar divide"></div>
+
+                    <h3>Humidity</h3>
+                    <p class="humidity">38°</p>
+
+                    <div class="bar divide"></div>
+
+                    <h3>Wind</h3>
+                    <p class="wind">6</p>
+                    
+                </section>
+
+
                     <section class="weather-data">
                     <div>
                         <h2 class="feels-like">Feels Like 28°</h2>
