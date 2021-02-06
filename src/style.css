@@ -16,7 +16,14 @@ o1n == night/monotone
 
     --highlight-yellow: rgb(218, 165, 32);/*goldenrod*/
     --highlight-red: rgb(220, 20, 60);/*crimson*/
+
+
+    --dark-blue-txt: #42474d;
+    --blue-highlight: #dfe5ec;
+    --white-highlight: #f2f2f2;
+    --orange-highlight: #eb6e4b;
 }
+
 html {
     min-height: 100%;
 }
@@ -28,14 +35,14 @@ body {
     background-color: var(--background-color);
     color: var(--dark-text);
     font-size: 1em;
-
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto', sans-serif;
+    
 
 }
 
 p {
     margin: 0;
-    color: #42474d;
+    color: var(--dark-blue-txt);
 }
 
 h1 {
@@ -48,7 +55,7 @@ h2 {
 h3 {
     margin: 0 0 .3rem 0;
     font-size: 1rem;
-    color: #42474d;
+    color: var(--dark-blue-txt);
 }
 h4 {
     /*margin: 1rem 0 .3rem 0;*/
@@ -89,8 +96,61 @@ h4 {
     height: 2px;
     width: 200px;
     margin: .5rem 0;
-    background: #f2f2f2;
+    background: var(--white-highlight);
 }
+
+/* HEADER */
+
+header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.search {
+    margin: 0;
+    margin-top: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.form-input {
+    background-color: var(--white-highlight);
+    border: none;
+    padding: .5rem;
+}
+
+.search-btn {
+    padding: .5rem;
+    border: none;
+    background-color: var(--orange-highlight);
+    color: var(--white-highlight);
+}
+
+.unit-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.unit-btn {
+    padding: .5rem .8rem;
+    border: none;
+    color: var(--dark-blue-txt);
+    background-color: var(--white-highlight);
+}
+
+button span {
+    padding: 0 .3rem;
+}
+
+
+.bold {
+    font-weight: 700;
+    background-color: var(--orange-highlight);
+    color: var(--white-highlight);
+}
+
 
 /* MAIN DISPLAY */
 
@@ -98,6 +158,7 @@ h4 {
     display: flex;
     flex-flow: column nowrap;
     max-width: 65%;
+    font-family: 'Roboto Slab', serif;
 }
 
 .city {
@@ -130,10 +191,10 @@ h4 {
     flex-flow: column nowrap;
     align-items: flex-end;
 
-    border: 5px solid;
+    
     padding: 1rem;
     padding-top: 0;
-    font-family: 'Roboto', sans-serif;
+    
 }
 
 .cap {
@@ -169,7 +230,7 @@ h4 {
     font-weight: bold;
 }
 .sky-icon {
-    border-bottom: 5px solid #eb6e4b;
+    border-bottom: 5px solid var(--dark-text);
     margin: 0 0 1rem 0;
 
     display: flex;

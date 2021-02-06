@@ -67,6 +67,14 @@ function displayData() {
 
 
 
+/*------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------*/
+//EVENT LISTENERS
+
+const celciusBtn = document.querySelector('.celcius');
+
+
+const celciusBtn = document.querySelector('.fahrenheit');
 
 /*
 //dont want to call the api a bunch of times
