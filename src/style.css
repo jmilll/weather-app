@@ -88,7 +88,7 @@ h4 {
 }
 
 .thicc {
-    height: 2rem;
+    padding: 1rem 0;
     margin: 3rem 0 2rem 0;
 }
 
@@ -109,7 +109,7 @@ header {
 
 .search {
     margin: 0;
-    margin-top: 1rem;
+    margin: 1rem 1rem 0 0;
     display: flex;
     flex-flow: row nowrap;
 }
@@ -157,7 +157,6 @@ button span {
 .display {
     display: flex;
     flex-flow: column nowrap;
-    max-width: 65%;
     font-family: 'Roboto Slab', serif;
 }
 
