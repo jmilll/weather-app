@@ -66,15 +66,33 @@ function displayData() {
 }
 
 
-
+function removeBold() {
+    const unitBtns = document.querySelectorAll('.unit-btn');
+    unitBtns.forEach(btn => btn.classList.remove('bold'));
+}
 /*------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------*/
 //EVENT LISTENERS
+const searchBtn = document.querySelector('.search-btn');
+searchBtn.addEventListener('click', () => {
+    console.log('search');
+});
 
 const celciusBtn = document.querySelector('.celcius');
+celciusBtn.addEventListener('click', () => {
+    console.log('C');
 
+    removeBold();
+    celciusBtn.classList.add('bold');
+});
+const fahrenheitBtn = document.querySelector('.fahrenheit');
+fahrenheitBtn.addEventListener('click', () => {
+    console.log('F');
 
-const celciusBtn = document.querySelector('.fahrenheit');
+    removeBold();
+    fahrenheitBtn.classList.add('bold');
+});
+
 
 /*
 //dont want to call the api a bunch of times
