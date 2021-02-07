@@ -50,6 +50,7 @@ function filterData(weatherData) {
     const humidity = weatherData.main.humidity;
     //wind
     const windSpeed = Math.round(weatherData.wind.speed);
+    const windDirection = weatherData.wind.deg;
 
     const displayData = {
         lat,
@@ -63,6 +64,7 @@ function filterData(weatherData) {
         lo,
         humidity,
         windSpeed,
+        windDirection,
     }
     console.log(displayData);
     return displayData;
@@ -70,8 +72,35 @@ function filterData(weatherData) {
 
 
 
-/*------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------*/
+
+
+
+function findWindDirection(deg) {
+    switch (true) {
+        case (deg < 22.5):
+            return 'N';
+        case (deg < 67.5):
+            return 'NE';
+        case (deg < 112.5):
+            return 'E';
+        case (deg < 157.5):
+            return 'SE';
+        case (deg < 202.5):
+            return 'S';
+        case (deg < 247.5):
+            return 'SW';
+        case (deg < 192.5):
+            return 'W';
+        case (deg < 337.5):
+            return 'NW';
+        case (deg > 337.6):
+            return 'N';
+        default:
+          console.log('Windy Boi Trouble');
+    };
+      
+};
+
 //DOM population
 
 function populateData(displayData, unit) {
@@ -102,11 +131,12 @@ function populateData(displayData, unit) {
     const humidity = document.querySelector('.humidity');
     humidity.textContent = displayData.humidity + '%';
 
+    const windDir = findWindDirection(displayData.windDirection);
     const windSpeed = document.querySelector('.wind');
     if (unit === 'imperial') {
-        windSpeed.textContent = displayData.windSpeed + ' mph';
+        windSpeed.textContent = displayData.windSpeed + ' mph ' + windDir;
     } else {
-        windSpeed.textContent = displayData.windSpeed + ' m/s';
+        windSpeed.textContent = displayData.windSpeed + ' m/s ' + windDir;
     }
     
 
