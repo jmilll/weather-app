@@ -61,6 +61,9 @@ h4 {
     /*margin: 1rem 0 .3rem 0;*/
     margin: 0 0 .3rem 0;
 }
+button {
+    cursor: pointer;
+}
 
 #content {
     
@@ -125,6 +128,15 @@ header {
     border: none;
     background-color: var(--orange-highlight);
     color: var(--white-highlight);
+}
+
+.search-err {
+    position: absolute;
+    top: .2rem;
+    background-color: var(--orange-highlight);
+    color: var(--dark-text);
+    font-weight: 700;
+    padding: .2rem .5rem;
 }
 
 .unit-container {

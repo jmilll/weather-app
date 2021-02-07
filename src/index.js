@@ -14,21 +14,36 @@ const API_KEY = '3069ae2718e40f8dc1998b7250e16f10';
 //° or °
 
 async function getWeather(location, unit) {
-    //call the api
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=${unit}`);
+    try {
+        //call the api
+        const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=${unit}`);
 
-    const weatherData = await response.json();
-    //const response2 = await fetch('http://api.openweathermap.org/data/2.5/weather?q=London&mode=xml')
-    //process data
+        const weatherData = await response.json();
+        //const response2 = await fetch('http://api.openweathermap.org/data/2.5/weather?q=London&mode=xml')
+        //process data
 
-    console.log(weatherData);
-    const filteredData = filterData(weatherData);
-    populateData(filteredData, unit);
+        console.log(weatherData);
+        const filteredData = filterData(weatherData);
+        populateData(filteredData, unit);
 
-    //return a value
-    //return weatherData;
+    }
+    catch(err){
+        console.log(err);
+        console.log('Oops, city not found :(');
+        populateErr();
+    }
 };
-getWeather('detroit', 'imperial');
+
+//getWeather('detroit', 'imperial');
+
+function populateErr() {
+    const parent = document.querySelector('header');
+    const searchErr = document.createElement('p');
+    searchErr.classList.add('search-err');
+    searchErr.textContent = 'Oops! City not found, try again.';
+    parent.appendChild(searchErr);
+    setTimeout(function(){ searchErr.remove() }, 3000);
+}
 
 
 //process data i want to display
@@ -142,6 +157,12 @@ function populateData(displayData, unit) {
 
 }
 
+function searchValue() {
+    const searchInput = document.querySelector('.form-input');
+    //if (!searchInput.value) {return};
+    console.log('search value');
+    //return searchInput.value;
+}
 
 function removeBold() {
     const unitBtns = document.querySelectorAll('.unit-btn');
@@ -151,8 +172,12 @@ function removeBold() {
 -----------------------------------------------------------------------------------------------*/
 //EVENT LISTENERS
 const searchBtn = document.querySelector('.search-btn');
-searchBtn.addEventListener('click', () => {
-    console.log('search');
+searchBtn.addEventListener('click', (e) => {
+    //if required input is empty --> cancel
+    if (!document.querySelector('.form-input').value) {return};
+    e.preventDefault();
+    //things you want to do
+    searchValue();
 });
 
 const celciusBtn = document.querySelector('.celcius');
