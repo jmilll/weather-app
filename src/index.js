@@ -22,15 +22,20 @@ async function getWeather(location, unit) {
     //process data
 
     console.log(weatherData);
-    filterData(weatherData);
+    const filteredData = filterData(weatherData);
+    populateData(filteredData, unit);
+
     //return a value
     //return weatherData;
 };
-//getWeather('detroit', 'imperial');
+getWeather('detroit', 'imperial');
 
 
 //process data i want to display
 function filterData(weatherData) {
+    //coordinates
+    const lat = weatherData.coord.lat;
+    const lon = weatherData.coord.lon;
     //city
     const city = weatherData.name;
     //weather (sunny/cloudy/rainy/etc)
@@ -47,6 +52,8 @@ function filterData(weatherData) {
     const windSpeed = Math.round(weatherData.wind.speed);
 
     const displayData = {
+        lat,
+        lon,
         city,
         sky,
         iconId,
@@ -61,7 +68,47 @@ function filterData(weatherData) {
     return displayData;
 }
 
-function displayData() {
+
+
+/*------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------*/
+//DOM population
+
+function populateData(displayData, unit) {
+    //display
+    const city = document.querySelector('.city');
+    city.textContent = displayData.city;
+
+    const currentTemp = document.querySelector('.current-temp');
+    currentTemp.textContent = displayData.mainTemp + '°';
+
+    const hiTemp = document.querySelector('.high');
+    hiTemp.textContent = 'H: ' + displayData.hi + '°';
+
+    const loTemp = document.querySelector('.low');
+    loTemp.textContent = 'L: ' + displayData.lo + '°';
+
+    //details
+    const skyImg = document.querySelector('.icon');
+    skyImg.src = 'https://openweathermap.org/img/wn/' + displayData.iconId + '@4x.png';
+    skyImg.alt = displayData.sky;
+
+    const skyDescription = document.querySelector('.sky');
+    skyDescription.textContent = displayData.sky;
+
+    const feelsLikeTemp = document.querySelector('.feels-like');
+    feelsLikeTemp.textContent = displayData.feelsLike + '°';
+
+    const humidity = document.querySelector('.humidity');
+    humidity.textContent = displayData.humidity + '%';
+
+    const windSpeed = document.querySelector('.wind');
+    if (unit === 'imperial') {
+        windSpeed.textContent = displayData.windSpeed + ' mph';
+    } else {
+        windSpeed.textContent = displayData.windSpeed + ' m/s';
+    }
+    
 
 }
 
@@ -85,6 +132,10 @@ celciusBtn.addEventListener('click', () => {
     removeBold();
     celciusBtn.classList.add('bold');
 });
+
+//boolean check if one is selected
+//fahrenheitBtn.matches('.bold')
+
 const fahrenheitBtn = document.querySelector('.fahrenheit');
 fahrenheitBtn.addEventListener('click', () => {
     console.log('F');
