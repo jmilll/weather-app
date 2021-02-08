@@ -22,6 +22,7 @@ o1n == night/monotone
     --blue-highlight: #dfe5ec;
     --white-highlight: #f2f2f2;
     --orange-highlight: #eb6e4b;
+    --minty: #cddada;
 }
 
 html {
@@ -29,6 +30,7 @@ html {
 }
 body {
     height: 100%;
+    min-width: 300px;
     width: auto;
     padding: 0;
     margin: 0;
@@ -123,6 +125,11 @@ header {
     padding: .5rem;
 }
 
+.form-input:focus {
+    outline: var(--background-color) auto 1px;
+    outline-offset: -3px;
+}
+
 .search-btn {
     padding: .5rem;
     border: none;
@@ -152,10 +159,13 @@ header {
     background-color: var(--white-highlight);
 }
 
+.unit-btn:focus {
+    outline: none;
+}
+
 button span {
     padding: 0 .3rem;
 }
-
 
 .selected {
     font-weight: 700;
@@ -170,6 +180,9 @@ button span {
     display: flex;
     flex-flow: column nowrap;
     font-family: 'Roboto Slab', serif;
+    overflow-wrap: break-word;
+
+    max-width: 65%;
 }
 
 .city {
@@ -184,27 +197,16 @@ button span {
 }
 
 
-
-/* SIDE DISPLAY 
-    border: 5px solid;
-    border-right: none;
-    height: 5.4rem;
-    align-items: center;
-    display: flex;
-    padding: 0 1rem;
-    margin-left: 1rem;
-    background: black;
-    color: #bbc6d3;
-    */
+/* SIDE DISPLAY */
 
 .details {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-end;
-
-    
-    padding: 1rem;
+    /*padding: 1rem;*/
     padding-top: 0;
+
+    width: 35%;
     
 }
 
@@ -226,20 +228,13 @@ button span {
     display: flex;
     flex-flow: row nowrap;
     margin: 0 0 3.5rem 1rem;
-    
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    font-weight: bold;
     justify-content: space-between;
     width: 160px;
 }
-.high {
-    letter-spacing: 1px;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-.low {
-    letter-spacing: 1px;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
+
 .sky-icon {
     border-bottom: 5px solid var(--dark-text);
     margin: 0 0 1rem 0;
@@ -253,4 +248,160 @@ button span {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-end;
+}
+
+@media (min-width: 320px) and (max-width: 443px) {
+  
+    /* CSS 443px*/
+    body {
+        background: pink;
+        width: 100%;
+        min-width: 320px;
+    }
+
+    #content {
+        margin: 1rem 1.5rem;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .form-input {
+        width: 100%;
+    }
+
+    .display {
+        width: 100%;
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    .container {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .city {
+        font-size: 4rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .hi-lo-container {
+        margin: 0px auto 2rem auto;
+        width: 130px;
+    }
+
+    .details {
+        display: flex;
+        flex-flow: column nowrap;
+        padding-top: 0;
+        width: 100%;
+    }
+
+    .sky-icon {
+        width: 100%;
+    }
+
+    .weather-data {
+        align-items: center;
+    }
+
+    .divide {
+        width: 100%;
+    }
+
+}
+  
+  /* 
+  @media (min-width: 481px) and (max-width: 767px) {
+
+    body {
+        background: pink;
+    }
+}
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+
+@media (min-width: 444px) and (max-width: 767px) {
+  
+    /* CSS */
+    body {
+        background: var(--minty);
+        width: 100%;
+        min-width: 320px;
+    }
+
+    #content {
+        margin: 2rem 2.5rem;
+    }
+
+    .container {
+        flex-flow: column nowrap;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .form-input {
+        width: 100%;
+    }
+
+    .display {
+        max-width: 100%;
+    }
+    
+    .city {
+        font-size: 8rem;
+    }
+
+    h1 {
+        font-size: 8rem;
+    }
+
+    .hi-lo-container {
+        margin: 0px 0px 4rem auto;
+        width: 170px;
+        font-size: 1.5rem;
+    }
+
+    .thin {
+        margin: 10px 0 0 0;
+    }
+
+    .details {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        margin: 3rem 0;
+        flex-flow: row nowrap;
+        padding: 0;
+        align-items: center;
+        border: 5px solid var(--dark-text);
+        
+    }
+
+    .sky-icon {
+        border: none;
+        margin: 0;
+        
+    }
+    
+    .weather-data {
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        border-left: 3px solid;
+        padding: 20px 2rem;
+        align-items: flex-start;
+    }
+
+    .divide {
+        width: 100%;
+    }
 }
