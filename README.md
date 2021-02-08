@@ -6,13 +6,13 @@ In progress
 
 ## Example
 * Desktop
-![Desktop](assets/desktop.png)
+* ![Desktop](assets/desktop.png)
 
 * Tablet
-![Tablet](assets/tablet.png)
+* ![Tablet](assets/tablet.png)
 
 * Mobile
-![Mobile](assets/mobile.png)
+* ![Mobile](assets/mobile.png)
 
 [Check it](https://jmilll.github.io/weather-app/)
 
