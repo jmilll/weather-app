@@ -13,6 +13,9 @@ const API_KEY = '3069ae2718e40f8dc1998b7250e16f10';
 //<!--degree symbol in UNICODE use-->
 //° or °
 
+//getWeather('detroit', 'imperial');
+
+
 async function getWeather(location, unit) {
     try {
         //call the api
@@ -34,7 +37,7 @@ async function getWeather(location, unit) {
     };
 };
 
-//getWeather('detroit', 'imperial');
+
 
 function populateErr() {
     const parent = document.querySelector('header');
@@ -156,15 +159,14 @@ function populateData(displayData, unit) {
 
 };
 
+
 function searchValue() {
     const searchInput = document.querySelector('.form-input');
     //if (!searchInput.value) {return};
-    console.log(searchInput.value);
     return searchInput.value;
 };
 
 function searchUnit() {
-    const cBtn = document.querySelector('.celcius');
     const fBtn = document.querySelector('.fahrenheit');
 
     if (fBtn.matches('.selected')) {
@@ -176,9 +178,20 @@ function searchUnit() {
 };
 
 function getWeatherSearch() {
-    let city = searchValue();
-    let unit = searchUnit();
+    const city = searchValue();
+    const unit = searchUnit();
     getWeather(city, unit);
+};
+
+function getCurrentSearch() {
+    const city = document.querySelector('.city').textContent;
+    const unit = searchUnit();
+    getWeather(city, unit);
+};
+
+function unitChangeSearch() {
+    const searchInput = document.querySelector('.form-input');
+    return !searchInput.value ? getCurrentSearch() : getWeatherSearch();
 };
 
 function removeSelected() {
@@ -201,17 +214,14 @@ const celciusBtn = document.querySelector('.celcius');
 celciusBtn.addEventListener('click', () => {
     removeSelected();
     celciusBtn.classList.add('selected');
-    getWeatherSearch();
+    unitChangeSearch()
 });
-
-//boolean check if one is selected
-//fahrenheitBtn.matches('.selected')
 
 const fahrenheitBtn = document.querySelector('.fahrenheit');
 fahrenheitBtn.addEventListener('click', () => {
     removeSelected();
     fahrenheitBtn.classList.add('selected');
-    getWeatherSearch();
+    unitChangeSearch()
 });
 
 
