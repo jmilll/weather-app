@@ -6,14 +6,21 @@ In progress
 
 ## Example
 
-![Default Page](assets/demo1.png)
+![Desktop](assets/desktop.png)
+
+![Tablet](assets/tablet.png)
+
+![Mobile](assets/mobile.png)
 
 [Check it](https://jmilll.github.io/weather-app/)
 
 ## Features
 
-* Webpack Bundle
-* In progress
+* Webpack Bundle.
+* Responsive to media size.
+* Enter any city to get its weather.
+* Change between Fahrenheit and Celcius.
+* Offers current temp, hi/lo, precipitation icon, 'feels like' temp, humidity, and windspeed + direction.
 
 ## Motivation
 
@@ -22,7 +29,6 @@ The purpose of this project was to work on using Async/Await and promises
 ## Technologies Used
 
 * Webpack
-* Bootstrap
 * JavaScript
 * HTML / CSS
 * Flexbox
