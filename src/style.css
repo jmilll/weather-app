@@ -28,18 +28,17 @@ o1n == night/monotone
 html {
     min-height: 100%;
 }
+
 body {
     height: 100%;
     min-width: 300px;
     width: auto;
     padding: 0;
     margin: 0;
-    background-color: var(--background-color);
+    background-color: var(--minty);
     color: var(--dark-text);
     font-size: 1em;
     font-family: 'Roboto', sans-serif;
-    
-
 }
 
 p {
@@ -51,24 +50,26 @@ h1 {
    font-size: 7rem;
    margin: 0;
 }
+
 h2 {
     margin: 0;
 }
+
 h3 {
     margin: 0 0 .3rem 0;
     font-size: 1rem;
     color: var(--dark-blue-txt);
 }
+
 h4 {
-    /*margin: 1rem 0 .3rem 0;*/
     margin: 0 0 .3rem 0;
 }
+
 button {
     cursor: pointer;
 }
 
 #content {
-    
     height: 100%;
     display: flex;
     flex-flow: column nowrap;
@@ -80,6 +81,7 @@ button {
     flex-flow: row wrap;
     justify-content: space-between;
 }
+
 
 /* DIVIDER BARS */
 .bar{
@@ -103,6 +105,7 @@ button {
     margin: .5rem 0;
     background: var(--white-highlight);
 }
+
 
 /* HEADER */
 
@@ -181,7 +184,6 @@ button span {
     flex-flow: column nowrap;
     font-family: 'Roboto Slab', serif;
     overflow-wrap: break-word;
-
     max-width: 65%;
 }
 
@@ -203,20 +205,15 @@ button span {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-end;
-    /*padding: 1rem;*/
     padding-top: 0;
-
     width: 35%;
-    
 }
 
 .cap {
     font-size: 0.8rem;
     font-weight: 600;
 }
-.icon {
-    
-}
+
 .sky {
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -250,11 +247,12 @@ button span {
     align-items: flex-end;
 }
 
+
+/* MOBILE */
 @media (min-width: 320px) and (max-width: 443px) {
-  
-    /* CSS 443px*/
+
     body {
-        background: pink;
+        background: var(--minty);
         width: 100%;
         min-width: 320px;
     }
@@ -295,6 +293,10 @@ button span {
         width: 130px;
     }
 
+    .thin {
+        margin-top: .5rem;
+    }
+
     .details {
         display: flex;
         flex-flow: column nowrap;
@@ -313,23 +315,11 @@ button span {
     .divide {
         width: 100%;
     }
-
 }
-  
-  /* 
-  @media (min-width: 481px) and (max-width: 767px) {
 
-    body {
-        background: pink;
-    }
-}
-    ##Device = Most of the Smartphones Mobiles (Portrait)
-    ##Screen = B/w 320px to 479px
-  */
-
-@media (min-width: 444px) and (max-width: 767px) {
-  
-    /* CSS */
+/* MEDIUM SIZE */
+@media (min-width: 444px) and (max-width: 1024px) {
+ /* (min-width: 444px) and (max-width: 767px) */
     body {
         background: var(--minty);
         width: 100%;
@@ -365,7 +355,7 @@ button span {
     }
 
     .hi-lo-container {
-        margin: 0px 0px 4rem auto;
+        margin: 0px 0px 4rem 2rem;
         width: 170px;
         font-size: 1.5rem;
     }
@@ -389,7 +379,6 @@ button span {
     .sky-icon {
         border: none;
         margin: 0;
-        
     }
     
     .weather-data {
@@ -403,5 +392,68 @@ button span {
 
     .divide {
         width: 100%;
+    }
+}
+
+/* LARGE DESKTOP */
+@media (min-width: 1441px) {
+
+    body {
+        background: var(--minty);
+        width: 100%;
+        min-width: 320px;
+    }
+
+    #content {
+        margin: 2rem 5rem;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .thicc {
+        padding: 2rem 0;
+    }
+
+    .display {
+        max-width: 70%;
+    }
+    
+    .city {
+        font-size: 10rem;
+    }
+
+    h1 {
+        font-size: 10rem;
+    }
+
+    .hi-lo-container {
+        margin: 0 0 5.5rem 4rem;
+        font-size: 1.5rem;
+        width: 170px;
+    }
+
+    .thin {
+        margin-top: 1rem;
+    }
+
+    .details {
+        width: 30%;
+    }
+
+    .icon {
+        width: 250px;
+    }
+
+    .details p {
+        font-size: 1.2rem;
+    }
+
+    .cap {
+        font-size: 1rem;
+    }
+    .divide {
+        width: 250px;
     }
 }
