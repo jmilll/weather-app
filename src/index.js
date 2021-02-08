@@ -31,7 +31,7 @@ async function getWeather(location, unit) {
         console.log(err);
         console.log('Oops, city not found :(');
         populateErr();
-    }
+    };
 };
 
 //getWeather('detroit', 'imperial');
@@ -43,7 +43,7 @@ function populateErr() {
     searchErr.textContent = 'Oops! City not found, try again.';
     parent.appendChild(searchErr);
     setTimeout(function(){ searchErr.remove() }, 3000);
-}
+};
 
 
 //process data i want to display
@@ -80,10 +80,10 @@ function filterData(weatherData) {
         humidity,
         windSpeed,
         windDirection,
-    }
+    };
     console.log(displayData);
     return displayData;
-}
+};
 
 
 
@@ -113,7 +113,6 @@ function findWindDirection(deg) {
         default:
           console.log('Windy Boi Trouble');
     };
-      
 };
 
 //DOM population
@@ -152,22 +151,40 @@ function populateData(displayData, unit) {
         windSpeed.textContent = displayData.windSpeed + ' mph ' + windDir;
     } else {
         windSpeed.textContent = displayData.windSpeed + ' m/s ' + windDir;
-    }
+    };
     
 
-}
+};
 
 function searchValue() {
     const searchInput = document.querySelector('.form-input');
     //if (!searchInput.value) {return};
-    console.log('search value');
-    //return searchInput.value;
-}
+    console.log(searchInput.value);
+    return searchInput.value;
+};
 
-function removeBold() {
+function searchUnit() {
+    const cBtn = document.querySelector('.celcius');
+    const fBtn = document.querySelector('.fahrenheit');
+
+    if (fBtn.matches('.selected')) {
+        return 'imperial';
+    } else {
+        return 'metric';
+    };
+
+};
+
+function getWeatherSearch() {
+    let city = searchValue();
+    let unit = searchUnit();
+    getWeather(city, unit);
+};
+
+function removeSelected() {
     const unitBtns = document.querySelectorAll('.unit-btn');
-    unitBtns.forEach(btn => btn.classList.remove('bold'));
-}
+    unitBtns.forEach(btn => btn.classList.remove('selected'));
+};
 /*------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------*/
 //EVENT LISTENERS
@@ -177,26 +194,24 @@ searchBtn.addEventListener('click', (e) => {
     if (!document.querySelector('.form-input').value) {return};
     e.preventDefault();
     //things you want to do
-    searchValue();
+    getWeatherSearch();
 });
 
 const celciusBtn = document.querySelector('.celcius');
 celciusBtn.addEventListener('click', () => {
-    console.log('C');
-
-    removeBold();
-    celciusBtn.classList.add('bold');
+    removeSelected();
+    celciusBtn.classList.add('selected');
+    getWeatherSearch();
 });
 
 //boolean check if one is selected
-//fahrenheitBtn.matches('.bold')
+//fahrenheitBtn.matches('.selected')
 
 const fahrenheitBtn = document.querySelector('.fahrenheit');
 fahrenheitBtn.addEventListener('click', () => {
-    console.log('F');
-
-    removeBold();
-    fahrenheitBtn.classList.add('bold');
+    removeSelected();
+    fahrenheitBtn.classList.add('selected');
+    getWeatherSearch();
 });
 
 
