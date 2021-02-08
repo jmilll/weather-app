@@ -1,18 +1,18 @@
 
-# To Do List Webapp
+# Weather App
 In progress
 
 [Check it](https://jmilll.github.io/weather-app/)
 
 ## Example
-* Desktop
-* ![Desktop](assets/desktop.png)
+### Desktop
+![Desktop](assets/desktop.png)
 
-* Tablet
-* ![Tablet](assets/tablet.png)
+###  Tablet
+![Tablet](assets/tablet.png)
 
-* Mobile
-* ![Mobile](assets/mobile.png)
+###  Mobile
+![Mobile](assets/mobile.png)
 
 [Check it](https://jmilll.github.io/weather-app/)
 
