@@ -157,7 +157,7 @@ button span {
 }
 
 
-.bold {
+.selected {
     font-weight: 700;
     background-color: var(--orange-highlight);
     color: var(--white-highlight);
