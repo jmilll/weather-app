@@ -15,7 +15,7 @@ const API_KEY = _getKey();
 async function getWeather(location, unit) {
     try {
         //call the api
-        const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=${unit}`,
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=${unit}`,
         { mode: 'cors',});
 
         const weatherData = await response.json();
