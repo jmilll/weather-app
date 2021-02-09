@@ -1,4 +1,9 @@
+# api keys
+.env
+
+# dependencies
 /node_modules
+
 # Compiled source #
 ###################
 *.com
