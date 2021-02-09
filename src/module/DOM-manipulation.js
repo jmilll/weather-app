@@ -48,4 +48,9 @@ function populateErr() {
     setTimeout(function(){ searchErr.remove() }, 3000);
 };
 
-export { populateData, populateErr };
+function clearSearch() {
+    const input = document.querySelector('.form-input');
+    return input.value = '';
+};
+
+export { populateData, populateErr, clearSearch };
