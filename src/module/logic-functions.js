@@ -1,11 +1,16 @@
 import { populateErr, populateData } from './DOM-manipulation';
 
 //********** ---------- LOGIC FUNCTIONS ----------**********
-//API KEY: 
-//DOVI KEY: 3069ae2718e40f8dc1998b7250e16f10
-//api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}&units=imperial
 
-const API_KEY = '3069ae2718e40f8dc1998b7250e16f10';
+function _getKey() {
+    //split key to prevent scraping since no backend setup
+    const a = '3069ae2718e40f8dc';
+    const b = '1998b7250e16f';
+    const c =  9 + 1;
+    return a + b + c;
+}
+
+const API_KEY = _getKey();
 
 async function getWeather(location, unit) {
     try {
@@ -13,8 +18,6 @@ async function getWeather(location, unit) {
         const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=${unit}`);
 
         const weatherData = await response.json();
-        //const response2 = await fetch('http://api.openweathermap.org/data/2.5/weather?q=London&mode=xml')
-        //process data
 
         console.log(weatherData);
         const filteredData = _filterData(weatherData);
