@@ -1,6 +1,7 @@
 
 # Weather App
-In progress
+A weather app with real-time current weather, searchable by city, displayed in a pleasant manner. 
+Data pulled from Openweather's API.
 
 [Check it](https://jmilll.github.io/weather-app/)
 
