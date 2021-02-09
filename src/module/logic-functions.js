@@ -113,7 +113,7 @@ function getWeatherSearch() {
     getWeather(city, unit);
 };
 
-function _getCurrentSearch() {
+function getCurrentSearch() {
     const city = document.querySelector('.city').textContent;
     const unit = _searchUnit();
     getWeather(city, unit);
@@ -121,7 +121,7 @@ function _getCurrentSearch() {
 
 function unitChangeSearch() {
     const searchInput = document.querySelector('.form-input');
-    return !searchInput.value ? _getCurrentSearch() : getWeatherSearch();
+    return !searchInput.value ? getCurrentSearch() : getWeatherSearch();
 };
 
 function removeSelected() {
@@ -129,4 +129,4 @@ function removeSelected() {
     unitBtns.forEach(btn => btn.classList.remove('selected'));
 };
 
-export { findWindDirection, getWeatherSearch, unitChangeSearch, removeSelected, getWeather };
+export { findWindDirection, getWeatherSearch, unitChangeSearch, removeSelected, getWeather, getCurrentSearch };
