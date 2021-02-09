@@ -1,4 +1,5 @@
-import { getWeatherSearch, removeSelected, unitChangeSearch } from './logic-functions';
+import { clearSearch } from './DOM-manipulation';
+import { getWeatherSearch, removeSelected, getCurrentSearch } from './logic-functions';
 
 //********** ---------- EVENT LISTENERS ----------**********
 
@@ -10,21 +11,24 @@ function addEventListeners() {
         e.preventDefault();
         //things you want to do
         getWeatherSearch();
+        clearSearch();
     });
 
     const celciusBtn = document.querySelector('.celcius');
     celciusBtn.addEventListener('click', () => {
         removeSelected();
         celciusBtn.classList.add('selected');
-        unitChangeSearch()
+        getCurrentSearch();
+        //unitChangeSearch();
     });
 
     const fahrenheitBtn = document.querySelector('.fahrenheit');
     fahrenheitBtn.addEventListener('click', () => {
         removeSelected();
         fahrenheitBtn.classList.add('selected');
-        unitChangeSearch()
+        getCurrentSearch();
+        //unitChangeSearch();
     });
-}
+};
 
 export { addEventListeners };
